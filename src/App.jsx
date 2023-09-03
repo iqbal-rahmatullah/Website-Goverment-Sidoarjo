@@ -11,6 +11,8 @@ import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 import Laporan from "./pages/Laporan"
+import Berita from "./pages/Berita"
+import Informasi from "./pages/Informasi"
 
 function App() {
   useEffect(() => {
@@ -22,6 +24,8 @@ function App() {
         <Routes>
           <Route path='/' Component={Homepage}></Route>
           <Route path='/laporan' Component={Laporan}></Route>
+          <Route path='/berita' Component={Berita}></Route>
+          <Route path='/informasi' Component={Informasi}></Route>
         </Routes>
       </Router>
     </>
