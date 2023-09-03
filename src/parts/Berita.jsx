@@ -9,22 +9,18 @@ const Berita = () => {
 
   useEffect(() => {
     axios
-      .get(
-        "https://newsapi.org/v2/everything?q=sidoarjo&apiKey=0516f2bad3a3401098b3372d7d256d7a"
-      )
+      .get("https://berita-indo-api.vercel.app/v1/tribun-news/jatim/bisnis")
       .then((result) => {
-        setBerita(result.data.articles)
+        setBerita(result.data.data)
       })
       .catch((err) => {
         console.log(err)
       })
 
     axios
-      .get(
-        "https://newsapi.org/v2/everything?q=jatim&pageSize=6&apiKey=0516f2bad3a3401098b3372d7d256d7a"
-      )
+      .get("https://berita-indo-api.vercel.app/v1/tribun-news/jatim/bisnis")
       .then((result) => {
-        setRightBerita(result.data.articles)
+        setRightBerita(result.data.data.slice(0, 5))
       })
       .catch((err) => {
         console.log(err)
@@ -53,7 +49,7 @@ const Berita = () => {
                 Berita
               </h5>
               <button
-                className='bg-secondary hover:bg-yellow-300 px-4 py-1 rounded-2xl font-medium lowercase'
+                className='bg-secondary hover:bg-yellow-300 transition-all ease-in-out px-4 py-1 rounded-2xl font-medium lowercase'
                 // data-aos='fade-left'
                 // data-aos-offset='500'
               >
@@ -88,16 +84,16 @@ const Berita = () => {
                 <h5 className='font-bold uppercase text-xl text-primary'>
                   Terbaru
                 </h5>
-                <div className='w-full flex flex-wrap md:flex-nowrap md:gap-x-4 mt-6'>
+                <div className='w-full flex flex-wrap md:flex-nowrap md:gap-x-4 mt-6 p-5 md:p-0 hover:bg-primary hover:text-white transition-all ease-in-out cursor-pointer rounded-3xl'>
                   <div className='w-full md:w-1/3 rounded-3xl overflow-hidden '>
-                    <img src={berita[2].urlToImage} alt='' />
+                    <img src={berita[2].image} alt='' />
                   </div>
-                  <div className='w-full md:w-2/3'>
+                  <div className='w-full md:w-2/3 md:py-2'>
                     <h1 className='text-xl md:text-2xl mt-2 md:mt-0 font-bold uppercase'>
                       {berita[2].title}
                     </h1>
-                    <p className='mt-2 md:mt-0'>{berita[2].description}</p>
-                    <p className='font-thin text-sm'>{berita[2].publishedAt}</p>
+                    <p className='mt-2 md:mt-0'>{berita[2].contentSnippet}</p>
+                    <p className='font-thin text-sm'>{berita[2].isoDate}</p>
                   </div>
                 </div>
                 <div className='w-full px-4 mt-10'>
@@ -112,7 +108,7 @@ const Berita = () => {
                 <div className='w-full h-full p-3 overflow-hidden'>
                   {rightBerita.map((berita) => (
                     <div
-                      className='w-full rounded-xl mb-4 p-3 hover:bg-primary hover:text-white'
+                      className='w-full rounded-xl mb-4 p-3 hover:bg-primary hover:text-white transition-all ease-in-out'
                       key={berita.title}
                     >
                       <a href='#' className='w-full rounded-xl'>

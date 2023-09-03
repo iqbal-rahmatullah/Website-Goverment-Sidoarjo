@@ -12,11 +12,11 @@ body {
 
 .swiper-button-next,
 .swiper-button-prev {
-  background-color: #319270;
+  background-color: #fbbf24;
   border-radius: 50%;
   right: 5px;
   padding: 30px;
-  color: #fbbf24 !important;
+  color: #319270 !important;
 }
 
 .swiper-button-next:hover,
@@ -31,11 +31,11 @@ body {
 @media only screen and (max-width: 426px) {
   .swiper-button-next,
   .swiper-button-prev {
-    background-color: #319270;
+    background-color: #fbbf24;
     border-radius: 50%;
     right: 5px;
-    padding: 25px;
-    color: #fbbf24 !important;
+    padding: 30px;
+    color: #319270 !important;
   }
 
   .swiper-button-prev::after,

@@ -10,11 +10,9 @@ export default function Carousel() {
 
   useEffect(() => {
     axios
-      .get(
-        "https://newsapi.org/v2/everything?q=sidoarjo&apiKey=0516f2bad3a3401098b3372d7d256d7a"
-      )
+      .get("https://berita-indo-api.vercel.app/v1/tribun-news/jatim/techno")
       .then((result) => {
-        setBerita(result.data.articles)
+        setBerita(result.data.data.slice(0, 8))
       })
       .catch((err) => {
         console.log(err)
@@ -23,7 +21,7 @@ export default function Carousel() {
 
   if (berita.length === 0) {
     return (
-      <div className='w-full'>
+      <div className='w-full py-20'>
         <img src={loading} alt='' className='mx-auto' />
       </div>
     )
@@ -42,7 +40,7 @@ export default function Carousel() {
         }}
         navigation={true}
         modules={[Autoplay, Navigation]}
-        className='mySwiper h-full w-full'
+        className='mySwiper h-full w-full animate__animated  animate__animated animate__bounceIn'
       >
         {berita.map((berita) => (
           <SwiperSlide key={berita.title}>
@@ -51,25 +49,25 @@ export default function Carousel() {
                 <h1 className='uppercase text-primary font-bold text-xl'>
                   Berita
                 </h1>
-                <div className='w-full h-[500px] mt-4 flex flex-wrap rounded-xl bg-primary overflow-hidden'>
+                <div className='w-full h-[500px] md:h-full mt-4 flex flex-wrap rounded-xl bg-gradient-to-r from-secondary to-primary cursor-pointer overflow-hidden'>
                   <img
-                    className='w-full h-1/2'
-                    src={berita.urlToImage}
+                    className='w-full h-1/2 md:w-1/2'
+                    src={berita.image}
                     alt=''
                   />
-                  <div className='w-full h-1/2 p-3'>
+                  <div className='w-full h-1/2 p-3 md:w-1/2'>
                     <h1 className='text-white font-bold text-xl uppercase'>
                       {berita.title}
                     </h1>
                     <div className='w-full h-1/2'>
                       <div className='w-full h-3/4'>
                         <p className='text-white font-light line-clamp-3'>
-                          {berita.description}
+                          {berita.contentSnippet}
                         </p>
                       </div>
                       <div className='w-full h-1/4'>
                         <span className='text-white font-light text-xs'>
-                          {berita.publishedAt}
+                          {berita.isoDate}
                         </span>
                       </div>
                     </div>

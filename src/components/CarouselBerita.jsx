@@ -9,11 +9,9 @@ export default function CarouselBerita() {
   const [botBerita, setbotBerita] = useState([])
   useEffect(() => {
     axios
-      .get(
-        "https://newsapi.org/v2/everything?q=pemerintah&p=4&apiKey=0516f2bad3a3401098b3372d7d256d7a"
-      )
+      .get("https://berita-indo-api.vercel.app/v1/tribun-news/jatim/bisnis")
       .then((result) => {
-        setbotBerita(result.data.articles)
+        setbotBerita(result.data.data)
       })
       .catch((err) => {
         console.log(err)
@@ -50,16 +48,22 @@ export default function CarouselBerita() {
       >
         {botBerita.map((item) => (
           <SwiperSlide key={item.title}>
-            <div className='h-full w-full'>
+            <div className='h-full w-full p-5 md:p-0 hover:bg-primary group rounded-3xl hover:text-white transition-all ease-in-out cursor-pointer'>
               <div className='w-full h-full'>
                 <img
-                  src={item.urlToImage}
+                  src={item.image}
                   alt=''
                   className='w-full h-[200px] md:h-[160px] rounded-3xl'
                 />
               </div>
-              <h1 className='text-lg font-bold uppercase'>{item.title}</h1>
-              <p className='font-thin text-sm'>{item.publishedAt}</p>
+              <div className='md:p-2'>
+                <h1 className='text-lg font-bold uppercase group-hover:text-white'>
+                  {item.title}
+                </h1>
+                <p className='font-thin text-sm group-hover:text-white'>
+                  {item.isoDate}
+                </p>
+              </div>
             </div>
           </SwiperSlide>
         ))}

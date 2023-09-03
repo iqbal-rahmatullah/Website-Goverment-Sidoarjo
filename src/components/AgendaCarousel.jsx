@@ -9,11 +9,9 @@ export default function Carousel() {
   const [agenda, setAgenda] = useState([])
   useEffect(() => {
     axios
-      .get(
-        "https://newsapi.org/v2/everything?q=nkri&pageSize=6&apiKey=0516f2bad3a3401098b3372d7d256d7a"
-      )
+      .get("https://berita-indo-api.vercel.app/v1/tribun-news/jatim/travel")
       .then((result) => {
-        setAgenda(result.data.articles)
+        setAgenda(result.data.data.slice(0, 8))
       })
       .catch((err) => {
         console.log(err)
@@ -51,25 +49,19 @@ export default function Carousel() {
       >
         {agenda.map((agenda) => (
           <SwiperSlide key={agenda.title}>
-            <div className='w-full h-full flex flex-wrap md:flex-nowrap gap-x-4 py-8'>
+            <div className='w-full h-full flex flex-wrap md:flex-nowrap gap-x-4 py-8 rounded-3xl cursor-pointer transition-all ease-in-out'>
               <div className='w-full md:w-1/2'>
                 <div className='w-full rounded-xl overflow-hidden'>
-                  <img
-                    src={agenda.urlToImage}
-                    alt=''
-                    className='w-full h-[150px]'
-                  />
+                  <img src={agenda.image} alt='' className='w-full h-[150px]' />
                 </div>
               </div>
               <div className='w-full md:w-1/2 h-full overflow-hidden'>
-                <div className='w-full'>
-                  <h1 className='text-lg font-bold text-white uppercase'>
-                    {agenda.title}
-                  </h1>
-                  <p className='font-thin text-sm text-white'>
-                    {agenda.publishedAt}
-                  </p>
-                </div>
+                <h1 className='text-lg font-bold text-white uppercase'>
+                  {agenda.title}
+                </h1>
+                <p className='font-thin text-sm text-white'>
+                  {agenda.publishedAt}
+                </p>
               </div>
             </div>
           </SwiperSlide>

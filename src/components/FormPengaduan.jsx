@@ -1,4 +1,14 @@
+import Swal from "sweetalert2"
+
 const FormPengaduan = () => {
+  const handleSubmit = (e) => {
+    Swal.fire(
+      "Terkirim!",
+      "Laporan anda berhasil terkirim, tunggu balasan dari kami!",
+      "success"
+    )
+    e.preventDefault()
+  }
   return (
     <div className='w-full md:w-3/4 mx-auto bg-[#EEEEEE] shadow-sm p-3 md:p-6 animate__animated animate__bounceInLeft'>
       <div className='w-full bg-primary'>
@@ -7,7 +17,7 @@ const FormPengaduan = () => {
         </h2>
       </div>
       <div className='w-full py-6'>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className='mb-6'>
             <label
               htmlFor='judul'

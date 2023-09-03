@@ -7,11 +7,9 @@ const Hero = () => {
   const [berita, sertBerita] = useState([])
   useEffect(() => {
     axios
-      .get(
-        "https://newsapi.org/v2/everything?q=sidoarjo&apiKey=0516f2bad3a3401098b3372d7d256d7a"
-      )
+      .get("https://berita-indo-api.vercel.app/v1/antara-news/terkini")
       .then((result) => {
-        sertBerita(result.data.articles)
+        sertBerita(result.data.data.slice(0, 8))
       })
       .catch((err) => {
         console.log(err)
@@ -27,17 +25,20 @@ const Hero = () => {
   }
 
   return (
-    <div className='w-full'>
-      <div className='container w-full px-5 py-8'>
+    <div className='w-full md:pt-20'>
+      <div className='container w-full md:mx-auto px-5 py-8'>
         <Carousel></Carousel>
       </div>
-      <div className='container mb-20 w-full px-10'>
+      <div className='container mb-20 w-full px-10 md:mx-auto  animate__animated animate__bounceIn'>
         {berita.map((berita) => (
-          <div className='w-full h-[400px] my-4' key={berita.title}>
-            <div className='w-full h-1/2 rounded-xl overflow-hidden'>
-              <img src={berita.urlToImage} alt='' className='w-full h-full' />
+          <div
+            className='w-full h-[400px] md:h-full p-5 md:p-10 md:flex md:flex-wrap mb-10 hover:bg-primary group rounded-xl cursor-pointer transition ease-in-out'
+            key={berita.title}
+          >
+            <div className='w-full h-1/2 md:w-1/4 md:h-[250px] rounded-xl overflow-hidden'>
+              <img src={berita.image} alt='' className='w-full h-full' />
             </div>
-            <div className='w-full h-1/2 py-2'>
+            <div className='w-full h-1/2 md:w-3/4 md:px-5 md:h-full py-2 group-hover:text-white'>
               <h1 className='font-bold text-xl uppercase'>{berita.title}</h1>
               <div className='w-full h-1/2'>
                 <div className='w-full h-3/4'>
@@ -46,9 +47,7 @@ const Hero = () => {
                   </p>
                 </div>
                 <div className='w-full h-1/4'>
-                  <span className='font-light text-xs'>
-                    {berita.publishedAt}
-                  </span>
+                  <span className='font-light text-xs'>{berita.isoDate}</span>
                 </div>
               </div>
             </div>

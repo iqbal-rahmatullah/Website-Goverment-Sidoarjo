@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "requirejs": "^2.3.6",
+    "sweetalert2": "^11.7.27",
     "swiper": "^10.2.0",
     "tailwindcss-animated": "^1.0.1"
   },

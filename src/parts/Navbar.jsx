@@ -34,28 +34,20 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <a
-                href='#'
+              <NavLink
+                to='/berita'
                 className='block py-2 pl-3 pr-4 text-base hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
               >
                 Berita
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a
-                href='#'
-                className='block py-2 pl-3 pr-4 text-base  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
-              >
-                Agenda
-              </a>
-            </li>
-            <li>
-              <a
-                href='#'
+              <NavLink
+                to='/informasi'
                 className='block py-2 pl-3 pr-4 text-base  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
               >
                 Informasi
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>

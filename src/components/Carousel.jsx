@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import TransportIcon from "../assets/icon/transport.gif"
 import WisataIcon from "../assets/icon/wisata.gif"
 import BeritaIcon from "../assets/icon/berita.gif"
+import { NavLink } from "react-router-dom"
 
 // Import Swiper styles
 
@@ -27,34 +28,48 @@ export default function Carousel() {
         className='mySwiper h-full w-full lg:mx-6'
       >
         <SwiperSlide>
-          <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
-            <div className='w-full flex justify-center'>
-              <img src={TransportIcon} alt='' className='w-full lg:w-40' />
+          <a
+            href='https://sidoarjokab.bps.go.id/subject/17/transportasi.html'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
+              <div className='w-full flex justify-center'>
+                <img src={TransportIcon} alt='' className='w-full lg:w-40' />
+              </div>
+              <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
+                Transportasi
+              </div>
             </div>
-            <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
-              Transportasi
-            </div>
-          </div>
+          </a>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
-            <div className='w-full flex justify-center'>
-              <img src={WisataIcon} alt='' className='w-full lg:w-40' />
+          <a
+            href='https://www.tempatwisata.pro/wisata/Sidoarjo'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
+              <div className='w-full flex justify-center'>
+                <img src={WisataIcon} alt='' className='w-full lg:w-40' />
+              </div>
+              <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
+                Wisata
+              </div>
             </div>
-            <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
-              Wisata
-            </div>
-          </div>
+          </a>
         </SwiperSlide>
         <SwiperSlide>
-          <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
-            <div className='w-full flex justify-center'>
-              <img src={BeritaIcon} alt='' className='w-full lg:w-40' />
+          <NavLink to='/berita'>
+            <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
+              <div className='w-full flex justify-center'>
+                <img src={BeritaIcon} alt='' className='w-full lg:w-40' />
+              </div>
+              <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
+                Berita
+              </div>
             </div>
-            <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
-              Berita
-            </div>
-          </div>
+          </NavLink>
         </SwiperSlide>
       </Swiper>
     </>

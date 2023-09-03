@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import logo from "../assets/img/logo_sidoarjo.png"
 
 const FooterComponent = () => {
@@ -21,17 +22,19 @@ const FooterComponent = () => {
                 </h2>
                 <ul className='text-gray-500 font-medium'>
                   <li className='mb-4'>
-                    <a href='https://flowbite.com/' className='hover:underline'>
+                    <NavLink to='/laporan' className='hover:underline'>
                       Ajukan Pengaduan
-                    </a>
+                    </NavLink>
+                  </li>
+                  <li className='mb-4'>
+                    <NavLink to='/berita' className='hover:underline'>
+                      Berita
+                    </NavLink>
                   </li>
                   <li>
-                    <a
-                      href='https://tailwindcss.com/'
-                      className='hover:underline'
-                    >
-                      Berita
-                    </a>
+                    <NavLink to='/informasi' className='hover:underline'>
+                      Informasi
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -42,16 +45,20 @@ const FooterComponent = () => {
                 <ul className='text-gray-500 font-medium'>
                   <li className='mb-4'>
                     <a
-                      href='https://github.com/themesberg/flowbite'
-                      className='hover:underline '
+                      href='https://www.instagram.com/pemkabsidoarjo/?hl=id'
+                      className='hover:underline'
+                      target='_blank'
+                      rel='noreferrer'
                     >
                       Instagram
                     </a>
                   </li>
                   <li>
                     <a
-                      href='https://discord.gg/4eeurUVvTy'
+                      href='https://www.facebook.com/pemkabsidoarjo/'
                       className='hover:underline'
+                      target='_blank'
+                      rel='noreferrer'
                     >
                       Facebook
                     </a>
@@ -64,12 +71,22 @@ const FooterComponent = () => {
                 </h2>
                 <ul className='text-gray-500  font-medium'>
                   <li className='mb-4'>
-                    <a href='#' className='hover:underline'>
+                    <a
+                      href='http://elabkd.sidoarjokab.go.id/privacypolicy'
+                      target='_blank'
+                      rel='noreferrer'
+                      className='hover:underline'
+                    >
                       Privacy Policy
                     </a>
                   </li>
                   <li>
-                    <a href='#' className='hover:underline'>
+                    <a
+                      href='https://ditakopum.sidoarjokab.go.id/terms'
+                      target='_blank'
+                      rel='noreferrer'
+                      className='hover:underline'
+                    >
                       Terms &amp; Conditions
                     </a>
                   </li>

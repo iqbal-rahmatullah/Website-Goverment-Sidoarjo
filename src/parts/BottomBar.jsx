@@ -4,7 +4,7 @@ const BottomBar = () => {
   return (
     <div className='md:hidden'>
       <div className='fixed z-[99999] w-full h-16 max-w-full -translate-x-1/2 bg-white border border-gray-200 rounded-full bottom-4 left-1/2'>
-        <div className='grid h-full max-w-full grid-cols-5 mx-auto'>
+        <div className='grid h-full max-w-full grid-cols-4 mx-auto'>
           <div className='flex items-center justify-center'>
             <NavLink
               to='/'
@@ -90,60 +90,38 @@ const BottomBar = () => {
             Laporan
             <div className='tooltip-arrow' data-popper-arrow></div>
           </div>
-          <NavLink
-            to='/informasi'
-            data-tooltip-target='tooltip-settings'
-            type='button'
-            className='inline-flex flex-col items-center justify-center px- group'
-          >
-            <svg
-              className='w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 20 20'
+
+          <div className='flex items-center justify-center'>
+            <NavLink
+              to='/informasi'
+              data-tooltip-target='tooltip-new'
+              type='button'
+              className='inline-flex items-center justify-center w-10 h-10 font-medium'
             >
-              <path
-                stroke='currentColor'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth='2'
-                d='M8 9h2v5m-2 0h4M9.408 5.5h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'
-              />
-            </svg>
-            <span className='sr-only'>Informasi</span>
-          </NavLink>
+              <svg
+                className='w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary'
+                aria-hidden='true'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 20 20'
+              >
+                <path
+                  stroke='currentColor'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M8 9h2v5m-2 0h4M9.408 5.5h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'
+                />
+              </svg>
+              <span className='sr-only'>Berita</span>
+            </NavLink>
+          </div>
           <div
-            id='tooltip-settings'
+            id='tooltip-new'
             role='tooltip'
             className='absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
           >
             Berita
-            <div className='tooltip-arrow' data-popper-arrow></div>
-          </div>
-          <NavLink
-            to='/agenda'
-            data-tooltip-target='tooltip-profile'
-            type='button'
-            className='inline-flex flex-col items-center justify-center px-5 rounded-r-ful group'
-          >
-            <svg
-              className='w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary'
-              aria-hidden='true'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='currentColor'
-              viewBox='0 0 20 20'
-            >
-              <path d='M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z' />
-            </svg>
-            <span className='sr-only'>Agenda</span>
-          </NavLink>
-          <div
-            id='tooltip-profile'
-            role='tooltip'
-            className='absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
-          >
-            Agenda
             <div className='tooltip-arrow' data-popper-arrow></div>
           </div>
         </div>
