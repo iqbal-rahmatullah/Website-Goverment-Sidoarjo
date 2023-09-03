@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.header_hero {
+  color: #319270;
+  -webkit-text-stroke: 2px #319270;
+  -webkit-text-fill-color: #eeeeee;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: #319270;
+  border-radius: 50%;
+  right: 5px;
+  padding: 30px;
+  color: #fbbf24 !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  @apply shadow-xl;
+}
+
+.active {
+  @apply border-b-2 border-b-primary text-primary;
+}
+
+@media only screen and (max-width: 426px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: #319270;
+    border-radius: 50%;
+    right: 5px;
+    padding: 25px;
+    color: #fbbf24 !important;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    width: 100px;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    @apply shadow-xl;
+  }
+  .active svg {
+    @apply text-primary;
+  }
+}
