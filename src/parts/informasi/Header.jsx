@@ -1,13 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import loading from "../../assets/icon/loading.gif"
+import logo from "../../assets/img/logo_sidoarjo.png"
 
 const Header = () => {
   const [agenda, setAgenda] = useState([])
   useEffect(() => {
     axios
       .get(
-        "https://newsapi.org/v2/everything?q=sidoarjo&apiKey=0516f2bad3a3401098b3372d7d256d7a"
+        "https://newsapi.org/v2/everything?q=sehat&apiKey=0516f2bad3a3401098b3372d7d256d7a&pageSize=6"
       )
       .then((result) => {
         setAgenda(result.data.articles)
@@ -36,11 +37,37 @@ const Header = () => {
           <p className='text-white font-light'>Pemerintah Kota Sidoarjo</p>
         </div>
         <div className='container py-10'>
-          <div className='w-full h-[300px] rounded-xl overflow-hidden bg-primary'>
-            <div className='w-full h-1/2 overflow-hidden'>
-              <img src={agenda[0].urlToImage} alt='' />
+          {agenda.map((agenda) => (
+            <div
+              className='w-full h-[300px] rounded-xl overflow-hidden'
+              key={agenda.title}
+            >
+              <div className='w-full h-1/2 overflow-hidden'>
+                <img
+                  src={agenda.urlToImage}
+                  alt=''
+                  className='object-none object-center'
+                />
+              </div>
+              <div className='w-full h-1/2 mt-2.5'>
+                <div className='flex items-center gap-x-3'>
+                  <img
+                    src={logo}
+                    className='w-[40px] h-[40px] bg-slate-200 shadow-md rounded-full'
+                    alt=''
+                  />
+                  <div className=''>
+                    <h1 className='font-bold text-xl uppercase'>
+                      {agenda.title}
+                    </h1>
+                    <span className='font-light text-xs'>
+                      {agenda.publishedAt}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
