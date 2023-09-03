@@ -20,7 +20,7 @@ const Berita = () => {
     axios
       .get("https://berita-indo-api.vercel.app/v1/tribun-news/jatim/bisnis")
       .then((result) => {
-        setRightBerita(result.data.data.slice(0, 5))
+        setRightBerita(result.data.data.slice(0, 7))
       })
       .catch((err) => {
         console.log(err)
@@ -85,14 +85,16 @@ const Berita = () => {
                   Terbaru
                 </h5>
                 <div className='w-full flex flex-wrap md:flex-nowrap md:gap-x-4 mt-6 p-5 md:p-0 hover:bg-primary hover:text-white transition-all ease-in-out cursor-pointer rounded-3xl'>
-                  <div className='w-full md:w-1/3 rounded-3xl overflow-hidden '>
+                  <div className='w-full md:w-full lg:w-1/3 rounded-3xl overflow-hidden '>
                     <img src={berita[2].image} alt='' />
                   </div>
                   <div className='w-full md:w-2/3 md:py-2'>
-                    <h1 className='text-xl md:text-2xl mt-2 md:mt-0 font-bold uppercase'>
+                    <h1 className='text-xl md:text-lg lg:text-2xl mt-2 md:mt-0 font-bold uppercase'>
                       {berita[2].title}
                     </h1>
-                    <p className='mt-2 md:mt-0'>{berita[2].contentSnippet}</p>
+                    <p className='mt-2 md:mt-0 md:text-sm lg:text-base'>
+                      {berita[2].contentSnippet}
+                    </p>
                     <p className='font-thin text-sm'>{berita[2].isoDate}</p>
                   </div>
                 </div>
@@ -112,7 +114,9 @@ const Berita = () => {
                       key={berita.title}
                     >
                       <a href='#' className='w-full rounded-xl'>
-                        <h1 className='text-sm '>{berita.title}</h1>
+                        <h1 className='text-sm md:text-xs lg:text-base'>
+                          {berita.title}
+                        </h1>
                       </a>
                     </div>
                   ))}

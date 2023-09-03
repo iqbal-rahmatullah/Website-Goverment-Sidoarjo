@@ -10,7 +10,7 @@ const FooterComponent = () => {
             <div className='mb-6 md:mb-0'>
               <a href='#' className='flex items-center'>
                 <img src={logo} className='h-14 mr-3' alt='FlowBite Logo' />
-                <span className='self-center text-xl font-semibold whitespace-nowrap uppercase'>
+                <span className='self-center text-xl md:text-base lg:text-xl font-semibold whitespace-nowrap uppercase'>
                   Kabupaten Sidoarjo
                 </span>
               </a>

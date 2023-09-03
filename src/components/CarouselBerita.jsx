@@ -40,7 +40,7 @@ export default function CarouselBerita() {
         navigation={true}
         modules={[Autoplay, Navigation]}
         breakpoints={{
-          768: {
+          1024: {
             slidesPerView: 3,
           },
         }}

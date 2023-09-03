@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
         <a href='https://flowbite.com/' className='flex items-center'>
           <img src={logoSidoarjo} className='h-14 mr-3' alt='Flowbite Logo' />
-          <span className='self-center text-xl font-semibold whitespace-nowrap uppercase'>
+          <span className='self-center text-xl md:text-lg lg:text-xl font-semibold whitespace-nowrap uppercase'>
             Kabupaten Sidoarjo
           </span>
         </a>
@@ -19,7 +19,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to='/'
-                className='block py-2 pl-3 pr-4 text-base md:bg-transparent md:p-0 uppercase'
+                className='block py-2 pl-3 lg:pl-0 lg:text-center text-base md:text-sm lg:text-base md:bg-transparent md:p-0 uppercase'
                 aria-current='page'
               >
                 Home
@@ -28,7 +28,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to='/laporan'
-                className='block py-2 pl-3 pr-4 text-base hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
+                className='block py-2 pl-3 text-base md:text-sm lg:text-base hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
               >
                 Laporan Pengaduan
               </NavLink>
@@ -36,7 +36,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to='/berita'
-                className='block py-2 pl-3 pr-4 text-base hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
+                className='block py-2 pl-3 text-base md:text-sm lg:text-base hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
               >
                 Berita
               </NavLink>
@@ -44,7 +44,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to='/informasi'
-                className='block py-2 pl-3 pr-4 text-base  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
+                className='block py-2 pl-3 text-base md:text-sm lg:text-base  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 uppercase'
               >
                 Informasi
               </NavLink>

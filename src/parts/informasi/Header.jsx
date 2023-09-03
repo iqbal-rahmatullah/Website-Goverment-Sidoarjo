@@ -36,7 +36,7 @@ const Header = () => {
             Pemerintah Kota Sidoarjo
           </p>
         </div>
-        <div className='container md:grid md:grid-cols-3 md:gap-4 py-10 animate__animated animate__bounceIn'>
+        <div className='container md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 py-10 animate__animated animate__bounceIn'>
           {agenda.map((agenda) => (
             <div
               className='w-full h-[300px] mb-4 md:mb-0 md:h-full rounded-xl overflow-hidden hover:bg-primary transition ease-in-out group cursor-pointer'
@@ -50,14 +50,14 @@ const Header = () => {
                 />
               </div>
               <div className='w-full h-1/2 mt-2.5'>
-                <div className='flex items-center gap-x-3 px-2 md:px-4'>
+                <div className='flex items-center md:items-start lg:items-center gap-x-3 px-2 lg:px-4'>
                   <img
                     src={logo}
                     className='w-[40px] h-[40px] bg-slate-200 shadow-md rounded-full'
                     alt=''
                   />
                   <div className='group-hover:text-white'>
-                    <h1 className='font-bold text-xl uppercase'>
+                    <h1 className='font-bold text-xl md:text-base lg:text-xl uppercase'>
                       {agenda.title}
                     </h1>
                     <span className='font-light text-xs'>{agenda.isoDate}</span>

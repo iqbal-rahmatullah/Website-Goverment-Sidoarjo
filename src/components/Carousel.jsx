@@ -25,7 +25,7 @@ export default function Carousel() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className='mySwiper h-full w-full lg:mx-6'
+        className='mySwiper h-full w-full md:mx-6'
       >
         <SwiperSlide>
           <a
@@ -35,9 +35,9 @@ export default function Carousel() {
           >
             <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
               <div className='w-full flex justify-center'>
-                <img src={TransportIcon} alt='' className='w-full lg:w-40' />
+                <img src={TransportIcon} alt='' className='w-full md:w-40' />
               </div>
-              <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
+              <div className='w-full text-center text-primary font-bold text-lg md:text-2xl uppercase'>
                 Transportasi
               </div>
             </div>
@@ -51,9 +51,9 @@ export default function Carousel() {
           >
             <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
               <div className='w-full flex justify-center'>
-                <img src={WisataIcon} alt='' className='w-full lg:w-40' />
+                <img src={WisataIcon} alt='' className='w-full md:w-40' />
               </div>
-              <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
+              <div className='w-full text-center text-primary font-bold text-lg md:text-2xl uppercase'>
                 Wisata
               </div>
             </div>
@@ -63,9 +63,9 @@ export default function Carousel() {
           <NavLink to='/berita'>
             <div className='h-full w-full flex justify-center flex-wrap items-center border border-primary overflow-hidden rounded-3xl'>
               <div className='w-full flex justify-center'>
-                <img src={BeritaIcon} alt='' className='w-full lg:w-40' />
+                <img src={BeritaIcon} alt='' className='w-full md:w-40' />
               </div>
-              <div className='w-full text-center text-primary font-bold text-lg lg:text-2xl uppercase'>
+              <div className='w-full text-center text-primary font-bold text-lg md:text-2xl uppercase'>
                 Berita
               </div>
             </div>

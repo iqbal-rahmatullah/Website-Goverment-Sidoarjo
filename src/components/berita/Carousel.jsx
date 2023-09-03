@@ -56,12 +56,12 @@ export default function Carousel() {
                     alt=''
                   />
                   <div className='w-full h-1/2 p-3 md:w-1/2'>
-                    <h1 className='text-white font-bold text-xl uppercase'>
+                    <h1 className='text-white font-bold text-xl md:text-base lg:text-xl  uppercase'>
                       {berita.title}
                     </h1>
                     <div className='w-full h-1/2'>
                       <div className='w-full h-3/4'>
-                        <p className='text-white font-light line-clamp-3'>
+                        <p className='text-white font-light text-base md:text-sm lg:text-base line-clamp-3'>
                           {berita.contentSnippet}
                         </p>
                       </div>

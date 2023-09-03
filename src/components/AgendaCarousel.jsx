@@ -39,7 +39,7 @@ export default function Carousel() {
           clickable: true,
         }}
         breakpoints={{
-          768: {
+          1024: {
             slidesPerView: 2,
           },
         }}
